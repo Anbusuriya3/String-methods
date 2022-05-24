@@ -1,0 +1,323 @@
+import java.util.*;
+public class Task
+{
+	String str1;
+	public Task(String str1)
+	{
+		this.str1=str1;		
+	}
+public String Concat(String str2)
+	{
+		return this.str1 + str2;
+	}
+
+public boolean equals(String str2)
+{
+	if(str1 != str2)
+	{
+	return false;
+	}
+	else
+	{
+	return true;
+	}
+}
+
+public int length()
+{
+      int i = 0;
+      for(char c: str1.toCharArray()) {
+         i++;
+      }
+	return i;
+}
+public boolean empty()
+{
+
+ 
+if(str1.length() == 0)
+{
+	return true;
+}
+return false;
+}
+
+public String charAt(int index)
+{
+	
+	String rs="";
+	char[] charArray =str1.toCharArray();
+	for(int i=0;i<str1.length();i++)
+	{
+		if(i==index)
+		{
+			rs+= charArray[i];
+			
+		}
+	}
+	return rs;
+}
+	
+public String substring(int index1 ,int index2)
+{
+         String ss="";
+         char[]str1char =str1.toCharArray();
+         for(int i=index1;i<=index2;i++)
+         {
+        	 ss+=(str1char[i]);
+         }
+         return ss;
+}
+
+public String toUpperCase()
+	{
+		 String newstring1="";
+		  char[] charArray =str1.toCharArray();
+		  for(int i=0;i<str1.length();i++)
+		  {
+			  if(charArray[i] >= 97 && charArray[i] <= 122 )
+			  {
+				  charArray[i]=(char) (charArray[i] - 32);
+				  newstring1+=(char)charArray[i];
+			  }
+			  else
+			  {
+				  newstring1+=(char)charArray[i];
+			  }
+		  }
+		  return newstring1;      
+	}
+
+public String toLowerCase()
+	{	
+		  String newstring="";
+		  char[] charArray =str1.toCharArray();
+		  for(int i=0;i<str1.length();i++)
+		  {
+			  if(charArray[i] >= 65 && charArray[i] <= 90 )
+			  {
+				  charArray[i]=(char) (charArray[i] +32);
+				  newstring+=(char)charArray[i];
+			  }
+			  else
+			  {
+				  newstring+=(char)charArray[i];
+			  }
+		  }
+		  return newstring;
+	}
+  
+public int CompareTo(String str2)
+	{
+		char[]str1charArray=str1.toCharArray();
+		char[]str2charArray=str2.toCharArray();
+		int str2_length = str2charArray.length;
+		if(str1charArray.length != str2_length)
+		{
+			return str1charArray.length-str2charArray.length;
+		}
+		for(int i=0;i<str1charArray.length;i++)
+		{
+		if(str1charArray[i] != str2charArray[i])
+		{
+			int asciivalue_str1=str1charArray[i];
+			int asciivalue_str2=str1charArray[i];
+			return asciivalue_str1-asciivalue_str2;
+		}
+		}
+		return 0;
+   }
+
+public String replace()
+	{
+	       char r;
+	       Scanner sc =new Scanner(System.in);
+	       System.out.println("Enter replacing word :");
+	       r=sc.next().charAt(0);
+	       sc.nextLine();
+	       String as ="";
+	       for(int i=0;i<str1.length();i++)
+	       {
+	    	   if(str1.charAt(i) == r)
+	    	   {
+	    		   as+="#";
+	    		   
+	    	   }
+	    	   else
+	    	   {
+	    		   as+=str1.charAt(i);
+	    	   }
+	       }
+	       return as;
+}
+
+public int codePointAt()
+	{
+		int index = 4;
+		int c=0;
+		char[] charArray = str1.toCharArray();
+		for(int i=0;i<str1.length();i++)
+		{
+			if(i==index)
+			{
+				int ascii = charArray[i];
+				c=ascii;
+		}
+
+	}
+		return c;
+	}
+
+public String trim()
+	{
+	int i, index=0;
+    
+	 char[]str1char = str1.toCharArray();
+    
+    int len = str1.length();
+    for(i=0; i<len; i++)
+    {
+       if(str1.charAt(i)==' ')
+          continue;
+       else
+       {
+          index = i;
+          break;
+       }
+    }
+    String newstr="";
+    for(i=index; i<len; i++)
+       newstr += str1.charAt(i);
+    
+    int lenTemp = newstr.length();
+    for(i=(lenTemp-1); i>=0; i--)
+    {
+       if(newstr.charAt(i)==' ')
+          continue;
+       else
+       {
+          index = i;
+          break;
+       }
+    }
+    String r = "";
+    for(i=0; i<=index; i++)
+       r += newstr.charAt(i);
+    
+    str1 = r;
+    return r;
+	}
+
+public int codePointBefore()
+	{
+		int index = 3;
+		int a=0;
+		index = index-1;
+		char[] charArray = str1.toCharArray();
+		for(int i=0;i<str1.length();i++)
+		{
+			if(i==index)
+			{
+				int ascii = charArray[i];
+				a=ascii;
+		}
+
+	}
+		return a;
+	}
+
+public int codePointCount(int index1, int index2)
+	{
+		int count=0;
+		char[]charArray=str1.toCharArray();
+		for(int i=index1;i<index2;i++)
+		{
+			count++;
+		}
+	return count;
+	}
+
+public int indexOf(String str2)
+{
+	
+	
+	for(int i=0;i<str1.length();i++)
+	{
+		char[]str1char = str1.toCharArray();
+		char[]str2char = str2.toCharArray();
+		if(str1.length() >= str2.length())
+		{
+	return i;
+		}
+	}
+	return 0;
+}
+
+public boolean startsWith(String str2)
+{
+	char[]str2char= str2.toCharArray();
+	char[]str1char = str1.toCharArray();
+	if(str1char.length < str2char.length)
+	{
+		return false;
+	}
+	int i=0;
+	for(int j=0;j<str2char.length;j++ )
+	{
+		if(str2char[j] == str1char[i])
+		{
+			i++;
+			continue;
+		}
+		return false;
+	}
+	return true;
+}
+
+public boolean endsWith(String str2)
+{
+	char[]str2char= str2.toCharArray();
+	char[]str1char = str1.toCharArray();
+	if(str1char.length < str2char.length)
+	{
+		return false;
+	}
+	int i=str1char.length-str2char.length;
+	for(int j=0;j<str2char.length;j++ )
+	{
+		if(str2char[j] == str1char[i])
+		{
+			i++;
+			continue;
+		}
+		return false;
+	}
+	return true;
+
+}
+	
+public boolean contains(String str2)
+{
+	char[] str2char = str2.toCharArray();
+	char[] str1char = str1.toCharArray();
+	if(!(str1.length() >= str2.length())) {
+	return false;
+	}
+	for (int i = 0; i < str1.length(); i++) {				
+		if(str1char[i] == str2char[0] && str1.length() - i >= str2.length()) {
+			int m = i,counter = 0;
+			for(char s : str2char) {
+				if(str1char[m] == s) 
+			   counter++;
+			   m++;
+			}			
+			return counter == str2.length();
+		}
+		
+	}
+	return false;
+}
+}
+
+		
+
